@@ -1,0 +1,761 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ICI FEST 2026 | PBCOE Nagpur</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary: #f97316; /* Safety Orange */
+            --primary-dark: #ea580c;
+            --secondary: #1e293b; /* Dark Slate/Engineering Blue */
+            --accent: #cbd5e1; /* Concrete Grey */
+            --light: #f8fafc;
+            --text-dark: #334155;
+            --text-light: #f1f5f9;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--light);
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Montserrat', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* --- Navigation --- */
+        nav {
+            background-color: var(--secondary);
+            color: var(--text-light);
+            padding: 1rem 5%;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .logo {
+            font-weight: 800;
+            font-size: 1.5rem;
+        }
+        .logo span { color: var(--primary); }
+
+        .nav-links {
+            display: flex;
+            gap: 1rem;
+            align-items: center; /* Added to vertically center the logo with text */
+        }
+
+        .nav-links a {
+            font-size: 0.9rem;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover { color: var(--primary); }
+
+        /* --- NEW: ICI Logo styling in Nav --- */
+        .nav-ici-logo-link {
+            display: inline-flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            padding: 5px 10px !important;
+            margin: 0 !important;
+            flex-shrink: 0;
+            background-color: var(--secondary);
+            border-radius: 4px;
+        }
+
+        .nav-ici-logo {
+            height: 65px !important;
+            width: 200px !important;
+            object-fit: contain !important;
+            transition: transform 0.3s ease;
+            display: block !important;
+            padding: 0 !important;
+            margin: 0 !important;
+        }
+
+        .nav-ici-logo:hover {
+            transform: scale(1.05);
+        }
+
+        .cta-btn {
+            background-color: var(--primary);
+            color: white;
+            padding: 0.5rem 1.2rem;
+            border-radius: 4px;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+
+        .cta-btn:hover { background-color: var(--primary-dark); }
+
+        /* --- Hero Section --- */
+        header {
+            height: 100vh;
+            background: linear-gradient(rgba(30, 41, 59, 0.8), rgba(30, 41, 59, 0.9)), url('https://images.unsplash.com/photo-1541888946425-d81bb19240f5?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            padding: 0 1rem;
+            margin-top: 60px;
+        }
+
+        header h3 {
+            font-size: 1.2rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        header h1 {
+            font-size: 4rem;
+            margin-bottom: 0.5rem;
+            line-height: 1.1;
+        }
+
+        header p {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            font-weight: 300;
+        }
+
+        .date-badge {
+            border: 2px solid var(--primary);
+            padding: 1rem 2rem;
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 2rem;
+            background: rgba(249, 115, 22, 0.1);
+            backdrop-filter: blur(5px);
+        }
+
+        /* --- Sections General --- */
+        section {
+            padding: 5rem 10%;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--secondary);
+            margin-bottom: 1rem;
+        }
+
+        .section-title .line {
+            width: 80px;
+            height: 4px;
+            background: var(--primary);
+            margin: 0 auto;
+        }
+
+        /* --- About Grid --- */
+        .about-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .about-card {
+            background: white;
+            padding: 2rem;
+            border-left: 5px solid var(--primary);
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+
+        .about-card h3 {
+            margin-bottom: 1rem;
+            color: var(--secondary);
+        }
+
+        /* --- Objectives --- */
+        .objectives {
+            background-color: var(--secondary);
+            color: white;
+        }
+        
+        .objectives h2 { color: white; }
+
+        .obj-list {
+            list-style: none;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .obj-list li {
+            position: relative;
+            padding-left: 2rem;
+        }
+
+        .obj-list li::before {
+            content: '\f00c';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            color: var(--primary);
+            position: absolute;
+            left: 0;
+            top: 2px;
+        }
+
+        /* --- Events Grid --- */
+        .events-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .event-card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .event-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .event-header {
+            background: var(--secondary);
+            color: white;
+            padding: 1.5rem;
+            text-align: center;
+        }
+
+        .event-header i {
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .event-body {
+            padding: 1.5rem;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        .coordinator {
+            font-size: 0.9rem;
+            color: #64748b;
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid #e2e8f0;
+            flex-grow: 1; /* Pushes the button to the bottom */
+        }
+
+        .fee-tag {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: var(--primary);
+            color: white;
+            font-size: 0.8rem;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-weight: bold;
+        }
+
+        /* --- NEW: Register Button on Card --- */
+        .register-btn-card {
+            display: block;
+            width: 100%;
+            background-color: var(--primary);
+            color: white;
+            text-align: center;
+            padding: 0.8rem;
+            margin-top: 1.5rem;
+            border-radius: 4px;
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            letter-spacing: 0.5px;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .register-btn-card:hover {
+            background-color: var(--secondary);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+        }
+
+        /* --- Committee Section --- */
+        .committee-section {
+            background-color: #f1f5f9;
+        }
+
+        .comm-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+        }
+
+        .comm-group h3 {
+            color: var(--primary);
+            border-bottom: 2px solid #cbd5e1;
+            padding-bottom: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .comm-list {
+            list-style: none;
+        }
+
+        .comm-list li {
+            margin-bottom: 0.8rem;
+            font-size: 0.95rem;
+        }
+
+        .comm-list strong {
+            display: block;
+            color: var(--secondary);
+        }
+
+        /* --- Footer --- */
+        footer {
+            background-color: var(--secondary);
+            color: white;
+            text-align: center;
+            padding: 4rem 1rem;
+        }
+
+        .footer-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .reg-fee {
+            font-size: 2rem;
+            color: var(--primary);
+            font-weight: 800;
+            margin: 1rem 0;
+        }
+
+        .register-large {
+            display: inline-block;
+            background-color: var(--primary);
+            color: white;
+            font-size: 1.2rem;
+            padding: 1rem 3rem;
+            border-radius: 50px;
+            margin: 2rem 0;
+            transition: all 0.3s;
+            box-shadow: 0 0 20px rgba(249, 115, 22, 0.4);
+        }
+
+        .register-large:hover {
+            transform: scale(1.05);
+            background-color: var(--primary-dark);
+        }
+
+        .contact-box {
+            background: rgba(255,255,255,0.1);
+            padding: 2rem;
+            border-radius: 8px;
+            margin-top: 2rem;
+        }
+
+        /* Mobile Menu */
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            font-size: 1.5rem;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 60px;
+                right: 0;
+                background-color: var(--secondary);
+                width: 100%;
+                text-align: center;
+                padding: 1rem 0;
+            }
+            
+            .nav-links.active {
+                display: flex;
+            }
+
+            .hamburger {
+                display: block;
+            }
+
+            header h1 { font-size: 2.5rem; }
+            section { padding: 3rem 5%; }
+            
+            .nav-ici-logo-link {
+                display: inline-flex !important;
+                align-items: center !important;
+                justify-content: center !important;
+                width: auto;
+                margin: 1rem 0;
+                padding: 5px 10px !important;
+                background-color: var(--secondary);
+                border-radius: 4px;
+            }
+
+            .nav-ici-logo {
+                height: 55px !important;
+                width: 180px !important;
+                margin: 0 !important;
+                padding: 0 !important;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">PBCOE <span>ICI FEST</span></div>
+        <div class="hamburger" onclick="toggleMenu()"><i class="fas fa-bars"></i></div>
+        <div class="nav-links">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#events">Events</a>
+            <a href="#committee">Committee</a>
+            <a href="https://icinagpur.org/" target="_blank" title="Official Website of ICI Nagpur" class="nav-ici-logo-link">
+                <img src="ici-logo.jpeg" alt="ICI Nagpur Logo" class="nav-ici-logo">
+            </a>
+        </div>
+    </nav>
+
+    <header id="home">
+        <h3>Priyadarshini Bhagwati College of Engineering Presents</h3>
+        <h1>ICI FEST 2026</h1>
+        <p>A Grand Technical Celebration of Innovation & Excellence</p>
+        <div class="date-badge">
+            <i class="far fa-calendar-alt"></i> 24 & 25 MARCH, 2026
+        </div>
+        <a href="#events" class="cta-btn" style="background: transparent; border: 2px solid white;">Explore Events</a>
+    </header>
+
+    <section id="about">
+        <div class="section-title">
+            <h2>About The Institute</h2>
+            <div class="line"></div>
+        </div>
+
+        <div class="about-grid">
+            <div class="about-card">
+                <h3><i class="fas fa-university"></i> About College</h3>
+                <p>Priyadarshini Bhagwati College of Engineering (PBCOE), Nagpur, is an Autonomous Institute affiliated to RTM Nagpur University and approved by AICTE. With NAAC "A" accreditation, PBCOE is committed to academic excellence, innovation, and industry-aligned learning.</p>
+            </div>
+            <div class="about-card">
+                <h3><i class="fas fa-hard-hat"></i> Department</h3>
+                <p>The Civil Engineering Department was established in 2010 with an intake of 120 students. Guided by dedicated faculty, the department upholds high academic standards. Alumni serve in top positions across government, private companies, and research organizations.</p>
+            </div>
+            <div class="about-card">
+                <h3><i class="fas fa-award"></i> ICI FEST 2026</h3>
+                <p>A grand technical celebration dedicated to innovation in concrete technology. Organized under the ICI Student Chapter, this fest aims to bridge the gap between academic knowledge and industry practices, featuring competitions, lectures, and workshops.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="objectives">
+        <div class="section-title">
+            <h2>Objectives</h2>
+            <div class="line" style="background: white;"></div>
+        </div>
+        <ul class="obj-list">
+            <li>Promote technical knowledge and excellence in concrete technology and civil engineering.</li>
+            <li>Bridge the gap between academic learning and industry practices through expert interactions.</li>
+            <li>Encourage innovation and research-oriented thinking in sustainable technologies.</li>
+            <li>Provide a platform for skill development through competitions, workshops, and technical presentations.</li>
+            <li>Strengthen professional networking among students, academicians, and industry professionals.</li>
+            <li>Develop leadership, teamwork, and organizational skills among students.</li>
+        </ul>
+    </section>
+
+    <section id="events">
+        <div class="section-title">
+            <h2>Technical Events</h2>
+            <div class="line"></div>
+            <p>Registration Fee: Rs. 100 per Event</p>
+        </div>
+
+        <div class="events-container">
+            <div class="event-card">
+                <div class="fee-tag">Rs. 100</div>
+                <div class="event-header">
+                    <i class="fas fa-file-alt"></i>
+                    <h4>Paper Presentation</h4>
+                </div>
+                <div class="event-body">
+                    <p>Present your research and technical papers.</p>
+                    <div class="coordinator">
+                        <strong>Prof. O. V. Sapate & Dr. A. M. Sorte</strong><br>Assistant Professor
+                    </div>
+                    <a href="YOUR_GOOGLE_FORM_LINK_HERE" target="_blank" class="register-btn-card">Register Now</a>
+                </div>
+            </div>
+
+            <div class="event-card">
+                <div class="fee-tag">Rs. 100</div>
+                <div class="event-header">
+                    <i class="fas fa-image"></i>
+                    <h4>Poster Presentation</h4>
+                </div>
+                <div class="event-body">
+                    <p>Visual presentation of technical concepts.</p>
+                    <div class="coordinator">
+                        <strong>Dr. N. R. Gautam</strong><br>Assistant Professor
+                    </div>
+                    <a href="YOUR_GOOGLE_FORM_LINK_HERE" target="_blank" class="register-btn-card">Register Now</a>
+                </div>
+            </div>
+
+            <div class="event-card">
+                <div class="fee-tag">Rs. 100</div>
+                <div class="event-header">
+                    <i class="fas fa-cubes"></i>
+                    <h4>Model Creativity</h4>
+                </div>
+                <div class="event-body">
+                    <p>Showcase innovative structural models.</p>
+                    <div class="coordinator">
+                        <strong>Dr. T. R. Patil</strong><br>Assistant Professor
+                    </div>
+                    <a href="YOUR_GOOGLE_FORM_LINK_HERE" target="_blank" class="register-btn-card">Register Now</a>
+                </div>
+            </div>
+
+            <div class="event-card">
+                <div class="fee-tag">Rs. 100</div>
+                <div class="event-header">
+                    <i class="fas fa-laptop-code"></i>
+                    <h4>Ideathon</h4>
+                </div>
+                <div class="event-body">
+                    <p>Solve complex civil engineering problems.</p>
+                    <div class="coordinator">
+                        <strong>Prof. D. B. Khadse & Prof. D. V. Jamthe</strong><br>Assistant Professor
+                    </div>
+                    <a href="YOUR_GOOGLE_FORM_LINK_HERE" target="_blank" class="register-btn-card">Register Now</a>
+                </div>
+            </div>
+
+            <div class="event-card">
+                <div class="fee-tag">Rs. 100</div>
+                <div class="event-header">
+                    <i class="fas fa-drafting-compass"></i>
+                    <h4>Drafting using CAD</h4>
+                </div>
+                <div class="event-body">
+                    <p>Test your design and drafting skills.</p>
+                    <div class="coordinator">
+                        <strong>Prof. R. N. Bute</strong><br>Assistant Professor
+                    </div>
+                    <a href="YOUR_GOOGLE_FORM_LINK_HERE" target="_blank" class="register-btn-card">Register Now</a>
+                </div>
+            </div>
+
+             <div class="event-card">
+                <div class="fee-tag">Rs. 100</div>
+                <div class="event-header">
+                    <i class="fas fa-recycle"></i>
+                    <h4>Kabad se Jugad</h4>
+                </div>
+                <div class="event-body">
+                    <p>Create something useful from waste.</p>
+                    <div class="coordinator">
+                        <strong>Prof. A. N. Kitey</strong><br>Assistant Professor
+                    </div>
+                    <a href="YOUR_GOOGLE_FORM_LINK_HERE" target="_blank" class="register-btn-card">Register Now</a>
+                </div>
+            </div>
+
+            <div class="event-card">
+                <div class="fee-tag">Rs. 100</div>
+                <div class="event-header">
+                    <i class="fas fa-layer-group"></i>
+                    <h4>Mix Design Comp</h4>
+                </div>
+                <div class="event-body">
+                    <p>Concrete Mix Design Challenge.</p>
+                    <div class="coordinator">
+                        <strong>Prof. P. M. Mankar</strong><br>Assistant Professor
+                    </div>
+                    <a href="YOUR_GOOGLE_FORM_LINK_HERE" target="_blank" class="register-btn-card">Register Now</a>
+                </div>
+            </div> 
+
+            <div class="event-card">
+                <div class="fee-tag">Rs. 100</div>
+                <div class="event-header">
+                    <i class="fas fa-archway"></i>
+                    <h4>Bridge Making</h4>
+                </div>
+                <div class="event-body">
+                    <p>Design and construct a bridge model.</p>
+                    <div class="coordinator">
+                        <strong>Prof. J. N. Tandulkar</strong><br>Assistant Professor
+                    </div>
+                    <a href="YOUR_GOOGLE_FORM_LINK_HERE" target="_blank" class="register-btn-card">Register Now</a>
+                </div>
+            </div>
+            
+            <div class="event-card">
+                <div class="fee-tag">Rs. 100</div>
+                <div class="event-header">
+                    <i class="fas fa-bezier-curve"></i>
+                    <h4>Clay Modelling</h4>
+                </div>
+                <div class="event-body">
+                    <p>From Mud to  Marsterpiece.</p>
+                    <div class="coordinator">
+                        <strong>Prof. M. N. Takarkhede</strong><br>Assistant Professor
+                    </div>
+                    <a href="YOUR_GOOGLE_FORM_LINK_HERE" target="_blank" class="register-btn-card">Register Now</a>
+                </div>
+            </div>
+
+            <div class="event-card">
+                <div class="fee-tag">Rs. 100</div>
+                <div class="event-header">
+                    <i class="fas fa-ruler-combined"></i>
+                    <h4>Civil Engineering Quiz</h4>
+                </div>
+                <div class="event-body">
+                    <p>Battle of the Brains.</p>
+                    <div class="coordinator">
+                        <strong>Dr. K. V. Madurwar</strong><br>Assistant Professor
+                    </div>
+                    <a href="YOUR_GOOGLE_FORM_LINK_HERE" target="_blank" class="register-btn-card">Register Now</a>
+                </div>
+            </div>
+
+            <div class="event-card">
+                <div class="fee-tag">Rs. 100</div>
+                <div class="event-header">
+                    <i class="fas fa-stopwatch"></i>
+                    <h4>Rapid Fire on Concrete</h4>
+                </div>
+                <div class="event-body">
+                    <p>Set Before You Reset.</p>
+                    <div class="coordinator">
+                        <strong>Dr. A. N. Burile</strong><br>Assistant Professor
+                    </div>
+                    <a href="YOUR_GOOGLE_FORM_LINK_HERE" target="_blank" class="register-btn-card">Register Now</a>
+                </div>
+            </div>  
+        </div>
+    </section>
+
+    <section id="committee" class="committee-section">
+        <div class="section-title">
+            <h2>Organizing Team</h2>
+            <div class="line"></div>
+        </div>
+
+        <div class="comm-grid">
+            <div class="comm-group">
+                <h3>Chief Patrons</h3>
+                <ul class="comm-list">
+                    <li><strong>Hon'ble Dr. Satish Chaturvedi</strong> Chairman, LTJSS</li>
+                    <li><strong>Hon'ble Smt. Abha Chaturvedi</strong> Secretary, LTJSS</li>
+                    <li><strong>Hon'ble Shri. Dushyant Chaturvedi</strong> Director (GB), LTJSS</li>
+                    <li><strong>Hon'ble Smt. Sheetal Chaturvedi</strong> Trustee, LTJSS</li>
+                    <li><strong>Hon'ble Mr. Abhijeet Deshmukh</strong> Director, LTJSS</li>
+                </ul>
+            </div>
+
+            <div class="comm-group">
+                <h3>Organizing Committee</h3>
+                <ul class="comm-list">
+                    <li><strong>Dr. Ranjit N. Patil</strong> Convener, HoD Civil Engineering</li>
+                    <li><strong>Dr. N. B. Thikare</strong> Organizing Secretary</li>
+                    <li><strong>Prof. R. H. Mohankar</strong> Co-incharge</li>
+                    <li><strong>Prof. K. D. Thanekar</strong> Co-incharge</li>
+                </ul>
+            </div>
+
+            <div class="comm-group">
+                <h3>Advisory Board (PBCOE)</h3>
+                <ul class="comm-list">
+                    <li><strong>Dr. A M Shende</strong> Principal, PBCOE</li>
+                    <li><strong>Dr. R Nandanwar</strong> Registrar</li>
+                    <li><strong>Dr. A D Kadam</strong> CoE</li>
+                    <li><strong>Dr. Mohd Gulfam Pathan</strong> Dean Academics</li>
+                    <li><strong>Dr. K S Gour</strong> Dean R & D</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contact">
+        <div class="footer-content">
+            <div class="contact-box">
+                <h3>Contact Us</h3>
+                <p><strong>Dr. Ranjit N. Patil</strong> (Convener)</p>
+                <p>Email: icifest2026@gmail.com</p>
+                <p>Phone: +91-9545453593</p>
+            </div>
+            
+            <p style="margin-top: 3rem; font-size: 0.8rem; opacity: 0.7;"> 
+                &copy; 2026 Priyadarshini Bhagwati College of Engineering, Nagpur. All Rights Reserved.
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            const nav = document.querySelector('.nav-links');
+            nav.classList.toggle('active');
+        }
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+                // Close mobile menu on click
+                document.querySelector('.nav-links').classList.remove('active');
+            });
+        });
+    </script>
+</body>
+</html>
