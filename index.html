@@ -65,7 +65,7 @@
 
         .nav-links {
             display: flex;
-            gap: 1rem;
+            gap: 2rem;
             align-items: center; /* Added to vertically center the logo with text */
         }
 
@@ -78,25 +78,11 @@
         .nav-links a:hover { color: var(--primary); }
 
         /* --- NEW: ICI Logo styling in Nav --- */
-        .nav-ici-logo-link {
-            display: inline-flex !important;
-            align-items: center !important;
-            justify-content: center !important;
-            padding: 5px 10px !important;
-            margin: 0 !important;
-            flex-shrink: 0;
-            background-color: var(--secondary);
-            border-radius: 4px;
-        }
-
         .nav-ici-logo {
-            height: 65px !important;
-            width: 200px !important;
-            object-fit: contain !important;
+            height: 35px; /* Adjust height to fit navbar */
+            width: auto;
             transition: transform 0.3s ease;
-            display: block !important;
-            padding: 0 !important;
-            margin: 0 !important;
+            display: block;
         }
 
         .nav-ici-logo:hover {
@@ -318,6 +304,64 @@
             box-shadow: 0 4px 6px rgba(0,0,0,0.2);
         }
 
+        /* --- NEW: Event Buttons Container --- */
+        .event-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+            margin-top: auto;
+        }
+
+        .rules-btn-card {
+            display: block;
+            width: 100%;
+            background-color: #64748b;
+            color: white;
+            text-align: center;
+            padding: 0.8rem;
+            border-radius: 4px;
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 0.5px;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .rules-btn-card:hover {
+            background-color: var(--secondary);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+        }
+
+        /* --- Responsive Media Queries --- */
+        @media (max-width: 768px) {
+            .event-buttons {
+                flex-direction: column;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .event-buttons {
+                flex-direction: column;
+                gap: 0.6rem;
+            }
+
+            .register-btn-card,
+            .rules-btn-card {
+                font-size: 0.75rem;
+                padding: 0.6rem;
+            }
+
+            .events-container {
+                grid-template-columns: 1fr;
+            }
+
+            .event-card {
+                margin-bottom: 1rem;
+            }
+        }
+
         /* --- Committee Section --- */
         .committee-section {
             background-color: #f1f5f9;
@@ -425,22 +469,8 @@
             header h1 { font-size: 2.5rem; }
             section { padding: 3rem 5%; }
             
-            .nav-ici-logo-link {
-                display: inline-flex !important;
-                align-items: center !important;
-                justify-content: center !important;
-                width: auto;
-                margin: 1rem 0;
-                padding: 5px 10px !important;
-                background-color: var(--secondary);
-                border-radius: 4px;
-            }
-
             .nav-ici-logo {
-                height: 55px !important;
-                width: 180px !important;
-                margin: 0 !important;
-                padding: 0 !important;
+                margin: 0 auto; /* Center logo on mobile menu */
             }
         }
     </style>
@@ -455,8 +485,8 @@
             <a href="#about">About</a>
             <a href="#events">Events</a>
             <a href="#committee">Committee</a>
-            <a href="https://icinagpur.org/" target="_blank" title="Official Website of ICI Nagpur" class="nav-ici-logo-link">
-                <img src="ici-logo.jpeg" alt="ICI Nagpur Logo" class="nav-ici-logo">
+            <a href="https://icinagpur.org/" target="_blank" title="Official Website of ICI Nagpur">
+                <img src="ici-logo.webp" alt="ICI Nagpur Logo" class="nav-ici-logo">
             </a>
         </div>
     </nav>
@@ -520,14 +550,14 @@
                 <div class="fee-tag">Rs. 100</div>
                 <div class="event-header">
                     <i class="fas fa-file-alt"></i>
-                    <h4>Paper Presentation</h4>
+                    <h4>Paper Presentation<br>(Hybrid Mode)</h4>
                 </div>
                 <div class="event-body">
                     <p>Present your research and technical papers.</p>
                     <div class="coordinator">
                         <strong>Prof. O. V. Sapate & Dr. A. M. Sorte</strong><br>Assistant Professor
                     </div>
-                    <a href="YOUR_GOOGLE_FORM_LINK_HERE" target="_blank" class="register-btn-card">Register Now</a>
+                    <a href="https://forms.gle/hiYdgdeKa7ZhezeW6" target="_blank" class="register-btn-card">Register Now</a>
                 </div>
             </div>
 
@@ -535,14 +565,14 @@
                 <div class="fee-tag">Rs. 100</div>
                 <div class="event-header">
                     <i class="fas fa-image"></i>
-                    <h4>Poster Presentation</h4>
+                    <h4>Poster Presentation<br>(Hybrid Mode)</h4>
                 </div>
                 <div class="event-body">
                     <p>Visual presentation of technical concepts.</p>
                     <div class="coordinator">
                         <strong>Dr. N. R. Gautam</strong><br>Assistant Professor
                     </div>
-                    <a href="YOUR_GOOGLE_FORM_LINK_HERE" target="_blank" class="register-btn-card">Register Now</a>
+                    <a href="https://docs.google.com/forms/d/1-cX6YhWgZh0cPG68XLxuX181jqKw1IFN033yUk_8Y2s/edit" target="_blank" class="register-btn-card">Register Now</a>
                 </div>
             </div>
 
@@ -550,14 +580,14 @@
                 <div class="fee-tag">Rs. 100</div>
                 <div class="event-header">
                     <i class="fas fa-cubes"></i>
-                    <h4>Model Creativity</h4>
+                    <h4>Model Creativity<br>(On Campus)</h4>
                 </div>
                 <div class="event-body">
                     <p>Showcase innovative structural models.</p>
                     <div class="coordinator">
                         <strong>Dr. T. R. Patil</strong><br>Assistant Professor
                     </div>
-                    <a href="YOUR_GOOGLE_FORM_LINK_HERE" target="_blank" class="register-btn-card">Register Now</a>
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSd686-mkCopJ8tVRRex6hcjw7In-Ek27mDrSnGloeaofsM8Og/viewform" target="_blank" class="register-btn-card">Register Now</a>
                 </div>
             </div>
 
@@ -565,14 +595,17 @@
                 <div class="fee-tag">Rs. 100</div>
                 <div class="event-header">
                     <i class="fas fa-laptop-code"></i>
-                    <h4>Ideathon</h4>
+                    <h4>Ideathon<br>(Hybrid Mode)</h4>
                 </div>
                 <div class="event-body">
                     <p>Solve complex civil engineering problems.</p>
                     <div class="coordinator">
                         <strong>Prof. D. B. Khadse & Prof. D. V. Jamthe</strong><br>Assistant Professor
                     </div>
-                    <a href="YOUR_GOOGLE_FORM_LINK_HERE" target="_blank" class="register-btn-card">Register Now</a>
+                    <div class="event-buttons">
+                        <a href="https://forms.gle/m17ySCrtCCF7iifL9" target="_blank" class="register-btn-card">Register Now</a>
+                        <a href="#" download class="rules-btn-card"><i class="fas fa-download"></i> Download Rules</a>
+                    </div>
                 </div>
             </div>
 
@@ -580,14 +613,14 @@
                 <div class="fee-tag">Rs. 100</div>
                 <div class="event-header">
                     <i class="fas fa-drafting-compass"></i>
-                    <h4>Drafting using CAD</h4>
+                    <h4>Drafting using CAD<br>(On Campus)</h4>
                 </div>
                 <div class="event-body">
                     <p>Test your design and drafting skills.</p>
                     <div class="coordinator">
                         <strong>Prof. R. N. Bute</strong><br>Assistant Professor
                     </div>
-                    <a href="YOUR_GOOGLE_FORM_LINK_HERE" target="_blank" class="register-btn-card">Register Now</a>
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLScIYuLS-DjnWx6JNJDoyRAIG-LYXMvvILsXwdl7RmJ2L66hjg/viewform?usp=dialog" target="_blank" class="register-btn-card">Register Now</a>
                 </div>
             </div>
 
@@ -595,14 +628,14 @@
                 <div class="fee-tag">Rs. 100</div>
                 <div class="event-header">
                     <i class="fas fa-recycle"></i>
-                    <h4>Kabad se Jugad</h4>
+                    <h4>Kabad se Jugad<br>(Hybrid Mode)</h4>
                 </div>
                 <div class="event-body">
                     <p>Create something useful from waste.</p>
                     <div class="coordinator">
                         <strong>Prof. A. N. Kitey</strong><br>Assistant Professor
                     </div>
-                    <a href="YOUR_GOOGLE_FORM_LINK_HERE" target="_blank" class="register-btn-card">Register Now</a>
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLScgxy-e4uPCxbAT0b8CWW9dCKYWluaz2wBR-Y6sSQEAMb9juQ/viewform?usp=publish-editor" target="_blank" class="register-btn-card">Register Now</a>
                 </div>
             </div>
 
@@ -610,14 +643,14 @@
                 <div class="fee-tag">Rs. 100</div>
                 <div class="event-header">
                     <i class="fas fa-layer-group"></i>
-                    <h4>Mix Design Comp</h4>
+                    <h4>Mix Design Comp<br>(On Campus)</h4>
                 </div>
                 <div class="event-body">
                     <p>Concrete Mix Design Challenge.</p>
                     <div class="coordinator">
                         <strong>Prof. P. M. Mankar</strong><br>Assistant Professor
                     </div>
-                    <a href="YOUR_GOOGLE_FORM_LINK_HERE" target="_blank" class="register-btn-card">Register Now</a>
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSe0bd74CPkiriYKjHWuNJI173xa14B368lEPpFsHWZ7bsGn5A/viewform?usp=publish-editor" target="_blank" class="register-btn-card">Register Now</a>
                 </div>
             </div> 
 
@@ -625,14 +658,14 @@
                 <div class="fee-tag">Rs. 100</div>
                 <div class="event-header">
                     <i class="fas fa-archway"></i>
-                    <h4>Bridge Making</h4>
+                    <h4>Bridge Making<br>(On Campus)</h4>
                 </div>
                 <div class="event-body">
                     <p>Design and construct a bridge model.</p>
                     <div class="coordinator">
                         <strong>Prof. J. N. Tandulkar</strong><br>Assistant Professor
                     </div>
-                    <a href="YOUR_GOOGLE_FORM_LINK_HERE" target="_blank" class="register-btn-card">Register Now</a>
+                    <a href="https://share.google/rBxxhROutn2pQi7uQ" target="_blank" class="register-btn-card">Register Now</a>
                 </div>
             </div>
             
@@ -640,14 +673,14 @@
                 <div class="fee-tag">Rs. 100</div>
                 <div class="event-header">
                     <i class="fas fa-bezier-curve"></i>
-                    <h4>Clay Modelling</h4>
+                    <h4>Clay Modelling<br>(On Campus)</h4>
                 </div>
                 <div class="event-body">
                     <p>From Mud to  Marsterpiece.</p>
                     <div class="coordinator">
                         <strong>Prof. M. N. Takarkhede</strong><br>Assistant Professor
                     </div>
-                    <a href="YOUR_GOOGLE_FORM_LINK_HERE" target="_blank" class="register-btn-card">Register Now</a>
+                    <a href="https://docs.google.com/forms/d/1lYloJHPGzPzswwvKuLG3aczY7259rjyRBig_UQoiP6I/edit" target="_blank" class="register-btn-card">Register Now</a>
                 </div>
             </div>
 
@@ -655,14 +688,14 @@
                 <div class="fee-tag">Rs. 100</div>
                 <div class="event-header">
                     <i class="fas fa-ruler-combined"></i>
-                    <h4>Civil Engineering Quiz</h4>
+                    <h4>Civil Engineering Quiz<br>(Hybrid Mode)</h4>
                 </div>
                 <div class="event-body">
                     <p>Battle of the Brains.</p>
                     <div class="coordinator">
                         <strong>Dr. K. V. Madurwar</strong><br>Assistant Professor
                     </div>
-                    <a href="YOUR_GOOGLE_FORM_LINK_HERE" target="_blank" class="register-btn-card">Register Now</a>
+                    <a href="https://forms.gle/1WnyQat9EwNhDxG78" target="_blank" class="register-btn-card">Register Now</a>
                 </div>
             </div>
 
@@ -670,14 +703,14 @@
                 <div class="fee-tag">Rs. 100</div>
                 <div class="event-header">
                     <i class="fas fa-stopwatch"></i>
-                    <h4>Rapid Fire on Concrete</h4>
+                    <h4>Rapid Fire on Concrete<br>(Hybrid Mode)</h4>
                 </div>
                 <div class="event-body">
                     <p>Set Before You Reset.</p>
                     <div class="coordinator">
                         <strong>Dr. A. N. Burile</strong><br>Assistant Professor
                     </div>
-                    <a href="YOUR_GOOGLE_FORM_LINK_HERE" target="_blank" class="register-btn-card">Register Now</a>
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSdlz_dgzUWL_kf7bGJiZHan6qmW0IuWP3tJht6ZCnLBB15i5A/viewform?usp=dialog" target="_blank" class="register-btn-card">Register Now</a>
                 </div>
             </div>  
         </div>
